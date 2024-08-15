@@ -1,6 +1,6 @@
 {
-  "name": "react-native-user-avatar",
-  "version": "1.1.0",
+  "name": "@bhavberi/react-native-user-avatar",
+  "version": "1.0.9",
   "description": "React Native component for a user avatar with fallback to colored initials",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
@@ -18,15 +18,18 @@
     "avatar",
     "initials"
   ],
-  "author": "Avishay Bar <avishay.il@gmail.com>",
+  "author": "Bhav Beri <bhavberi@gmail.com>",
   "license": "MIT",
-  "repository": "github:bhavberi/react-native-user-avatar",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhavberi/react-native-user-avatar.git"
+  },
   "scripts": {
     "test": "jest --coverage && jest-coverage-badges --output './badges'",
     "typescript": "tsc --noEmit",
     "lint": "eslint --ext=.js .",
     "prepare": "bob build",
-    "release": "dotenv release-it",
+    "release": "release-it",
     "example": "yarn --cwd Example",
     "bootstrap": "yarn && yarn prepare",
     "clean": "rm -rf node_modules coverage .env lib Example/node_modules "
