@@ -3,11 +3,11 @@
 exports[`should render <UserAvatar /> with name, with custom component 1`] = `
 <View
   style={
-    Array [
-      Object {
+    [
+      {
         "backgroundColor": "#1abc9c",
       },
-      Object {
+      {
         "alignItems": "center",
         "borderColor": "transparent",
         "borderRadius": 50,
@@ -20,7 +20,7 @@ exports[`should render <UserAvatar /> with name, with custom component 1`] = `
 >
   <View
     style={
-      Object {
+      {
         "alignItems": "center",
         "flexDirection": "column",
         "height": 100,
@@ -32,12 +32,12 @@ exports[`should render <UserAvatar /> with name, with custom component 1`] = `
   >
     <Image
       source={
-        Object {
+        {
           "testUri": "../../../src/__tests__/images/rn_logo.png",
         }
       }
       style={
-        Object {
+        {
           "height": 50,
           "width": 50,
         }
@@ -50,11 +50,11 @@ exports[`should render <UserAvatar /> with name, with custom component 1`] = `
 exports[`should render <UserAvatar /> with name, with src 1`] = `
 <View
   style={
-    Array [
-      Object {
+    [
+      {
         "backgroundColor": "#1abc9c",
       },
-      Object {
+      {
         "alignItems": "center",
         "borderColor": "transparent",
         "borderRadius": 16,
@@ -67,7 +67,7 @@ exports[`should render <UserAvatar /> with name, with src 1`] = `
 >
   <View
     style={
-      Object {
+      {
         "alignItems": "center",
         "flexDirection": "column",
         "height": 32,
@@ -80,12 +80,12 @@ exports[`should render <UserAvatar /> with name, with src 1`] = `
     <Text
       adjustsFontSizeToFit={true}
       style={
-        Array [
-          Object {
+        [
+          {
             "color": "#fff",
             "fontSize": 12.8,
           },
-          Object {},
+          {},
         ]
       }
     >
@@ -98,11 +98,11 @@ exports[`should render <UserAvatar /> with name, with src 1`] = `
 exports[`should render <UserAvatar /> with name, without src, default values 1`] = `
 <View
   style={
-    Array [
-      Object {
+    [
+      {
         "backgroundColor": "#1abc9c",
       },
-      Object {
+      {
         "alignItems": "center",
         "borderColor": "transparent",
         "borderRadius": 16,
@@ -115,7 +115,7 @@ exports[`should render <UserAvatar /> with name, without src, default values 1`]
 >
   <View
     style={
-      Object {
+      {
         "alignItems": "center",
         "flexDirection": "column",
         "height": 32,
@@ -128,12 +128,12 @@ exports[`should render <UserAvatar /> with name, without src, default values 1`]
     <Text
       adjustsFontSizeToFit={true}
       style={
-        Array [
-          Object {
+        [
+          {
             "color": "#fff",
             "fontSize": 12.8,
           },
-          Object {},
+          {},
         ]
       }
     >
@@ -146,11 +146,11 @@ exports[`should render <UserAvatar /> with name, without src, default values 1`]
 exports[`should warn because size is not number 1`] = `
 <View
   style={
-    Array [
-      Object {
+    [
+      {
         "backgroundColor": "#1abc9c",
       },
-      Object {
+      {
         "alignItems": "center",
         "borderColor": "transparent",
         "borderRadius": 50,
@@ -163,7 +163,7 @@ exports[`should warn because size is not number 1`] = `
 >
   <View
     style={
-      Object {
+      {
         "alignItems": "center",
         "flexDirection": "column",
         "height": 100,
@@ -176,12 +176,12 @@ exports[`should warn because size is not number 1`] = `
     <Text
       adjustsFontSizeToFit={true}
       style={
-        Array [
-          Object {
+        [
+          {
             "color": "#fff",
             "fontSize": 40,
           },
-          Object {},
+          {},
         ]
       }
     >

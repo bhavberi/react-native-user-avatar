@@ -13,6 +13,7 @@ it('should render <UserAvatar /> with name, without src, default values', () => 
 });
 
 it('should render <UserAvatar /> with name, with src', () => {
+  jest.useFakeTimers();
   const tree = renderer.create(<UserAvatar name="Avishay Bar" src="https://dummyimage.com/100x100/000/fff" />).toJSON();
   expect(tree).toMatchSnapshot();
 });

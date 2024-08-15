@@ -1,42 +1,24 @@
-const path = require('path');
-const fs = require('fs');
-const blacklist = require('metro-config/src/defaults/exclusionList');
-const escape = require('escape-string-regexp');
+const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
 
-const root = path.resolve(__dirname, '..');
-const pak = JSON.parse(
-  fs.readFileSync(path.join(root, 'package.json'), 'utf8')
-);
+const defaultConfig = getDefaultConfig(__dirname);
 
-const modules = [
-  '@babel/runtime',
-  ...Object.keys({
-    ...pak.dependencies,
-    ...pak.peerDependencies,
-  }),
-];
+const {
+  resolver: { sourceExts, assetExts },
+} = getDefaultConfig(__dirname);
 
-module.exports = {
-  projectRoot: __dirname,
-  watchFolders: [root],
-
+const config = {
+  // transformer: {
+  //   getTransformOptions: async () => ({
+  //     transform: {
+  //       experimentalImportSupport: false,
+  //       inlineRequires: true,
+  //     },
+  //   }),
+  // },
   resolver: {
-    blacklistRE: blacklist([
-      new RegExp(`^${escape(path.join(root, 'node_modules'))}\\/.*$`),
-    ]),
-
-    extraNodeModules: modules.reduce((acc, name) => {
-      acc[name] = path.join(__dirname, 'node_modules', name);
-      return acc;
-    }, {}),
-  },
-
-  transformer: {
-    getTransformOptions: async () => ({
-      transform: {
-        experimentalImportSupport: false,
-        inlineRequires: true,
-      },
-    }),
+    assetExts: assetExts.filter(ext => ext !== 'svg'),
+    // sourceExts: [...sourceExts, 'svg'],
   },
 };
+
+module.exports = mergeConfig(defaultConfig, config);

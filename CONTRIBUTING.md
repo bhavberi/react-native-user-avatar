@@ -46,11 +46,15 @@ When you're sending a pull request:
 
 The example app uses [Expo](https://expo.io/) for the React Native example. You will need to install the Expo app for [Android](https://play.google.com/store/apps/details?id=host.exp.exponent) and [iOS](https://itunes.apple.com/app/apple-store/id982107779) to start developing.
 
-After you're done, you can run `yarn example start` in the project root (or `expo start` in the `Example/` folder) and scan the QR code to launch it on your device.
+After you're done, you can run
+- `cd Example`
+- `yarn`
+- `yarn start`
+- Scan the QR code to launch it on your device.
 
 ## Reporting issues
 
-You can report issues on the [bug tracker](https://github.com/avishayil/react-native-user-avatar/issues). Please follow the issue template when opening an issue.
+You can report issues on the [bug tracker](https://github.com/bhavberi/react-native-user-avatar/issues). Please follow the issue template when opening an issue.
 
 ## License
 

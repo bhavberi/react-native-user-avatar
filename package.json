@@ -1,14 +1,16 @@
 {
   "name": "react-native-user-avatar",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "React Native component for a user avatar with fallback to colored initials",
-  "main": "lib/module/index.js",
-  "module": "lib/module/index.js",
-  "react-native": "src/index.js",
-  "types": "lib/typescript/types.d.ts",
+  "main": "./lib/commonjs/index.js",
+  "module": "./lib/module/index.js",
+  "types": "./lib/typescript/commonjs/types.d.ts",
   "files": [
-    "lib/",
-    "src/"
+    "src",
+    "lib",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
   ],
   "keywords": [
     "react-native",
@@ -18,55 +20,61 @@
   ],
   "author": "Avishay Bar <avishay.il@gmail.com>",
   "license": "MIT",
-  "repository": "github:avishayil/react-native-user-avatar",
+  "repository": "github:bhavberi/react-native-user-avatar",
   "scripts": {
     "test": "jest --coverage && jest-coverage-badges --output './badges'",
     "typescript": "tsc --noEmit",
-    "lint": "eslint --ext '.js' .",
+    "lint": "eslint --ext=.js .",
     "prepare": "bob build",
     "release": "dotenv release-it",
-    "example": "yarn --cwd example",
-    "bootstrap": "yarn example && yarn && cp .env.example .env",
-    "clean": "rm -rf node_modules coverage .env lib Example/node_modules"
+    "example": "yarn --cwd Example",
+    "bootstrap": "yarn && yarn prepare",
+    "clean": "rm -rf node_modules coverage .env lib Example/node_modules "
   },
   "dependencies": {
-    "react": "17.0.1",
-    "react-native": "^0.64.1",
-    "abortcontroller-polyfill": "^1.4.0",
-    "initials": "^3.0.1",
-    "prop-types": "^15.7.2",
-    "node-fetch": "2.6.7"
+    "abortcontroller-polyfill": "^1.7.5",
+    "initials": "^3.1.2",
+    "prop-types": "^15.8.1",
+    "react-native-builder-bob": "^0.29.1"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-native": "^0.74.1"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-0",
-    "@commitlint/config-conventional": "^8.3.4",
-    "@react-native-community/bob": "^0.10.1",
-    "@react-native-community/eslint-config": "^0.0.7",
-    "@release-it/conventional-changelog": "^1.1.0",
-    "@types/jest": "^27.4.0",
-    "@types/react": "^17.0.1",
-    "@types/react-native": "^0.64.1",
-    "@jest/create-cache-key-function": "^27.5.0",
-    "jest-fetch-mock": "^3.0.3",
-    "babel-jest": "27.5.0",
-    "commitlint": "^8.3.4",
-    "dotenv-cli": "^3.1.0",
-    "eslint": "^5.0.0",
+    "@babel/core": "^7.25.2",
+    "@babel/plugin-transform-private-methods": "^7.24.7",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@jest/create-cache-key-function": "^29.7.0",
+    "@react-native-community/eslint-config": "^3.2.0",
+    "@release-it/conventional-changelog": "^8.0.1",
+    "@types/jest": "^29.5.12",
+    "@types/react": "^18.3.3",
+    "@types/react-native": "^0.73.0",
+    "babel-jest": "29.7.0",
+    "commitlint": "^19.4.0",
+    "dotenv-cli": "^7.4.2",
+    "eslint": "^8.57.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "husky": "^4.0.1",
-    "jest": "^27.5.0",
-    "ts-jest": "^27.1.3",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.4",
+    "jest": "^29.7.0",
     "jest-coverage-badges": "^1.1.2",
-    "prettier": "^1.19.1",
-    "metro-react-native-babel-preset": "^0.59.0",
-    "react-test-renderer": "17.0.1",
-    "release-it": "^12.6.3",
-    "typescript": "^3.7.5"
+    "jest-environment-jsdom": "^29.7.0",
+    "jest-fetch-mock": "^3.0.3",
+    "metro-react-native-babel-preset": "^0.77.0",
+    "prettier": "^3.3.3",
+    "react": "^18.2.0",
+    "react-native": "^0.74.1",
+    "react-native-builder-bob": "^0.29.1",
+    "react-test-renderer": "18.3.1",
+    "release-it": "^17.6.0",
+    "ts-jest": "^29.2.4",
+    "typescript": "^5.5.4"
   },
   "resolutions": {
     "react-native/@jest/create-cache-key-function": "^27.0.1"
@@ -83,8 +91,7 @@
       "^.+\\.(ts|tsx)$": "ts-jest",
       "^.+\\.(js|jsx)$": "babel-jest"
     },
-    "transformIgnorePatterns": [
-    ],
+    "transformIgnorePatterns": [],
     "testMatch": [
       "**/**/*.test.js?(x)"
     ],
@@ -92,7 +99,9 @@
       "<rootDir>/Example/",
       "<rootDir>/lib/"
     ],
-    "setupFilesAfterEnv": ["<rootDir>/src/__tests__/setup.js"],
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/__tests__/setup.js"
+    ],
     "coverageReporters": [
       "json-summary",
       "text",
@@ -122,15 +131,45 @@
       }
     }
   },
-  "@react-native-community/bob": {
+  "source": "./src/index.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/typescript/module/types.d.ts",
+        "default": "./lib/module/index.js"
+      },
+      "require": {
+        "types": "./lib/typescript/commonjs/types.d.ts",
+        "default": "./lib/commonjs/index.js"
+      }
+    }
+  },
+  "react-native-builder-bob": {
     "source": "src",
     "output": "lib",
     "targets": [
-      "module",
-      "typescript"
-    ],
-    "files": [
-      "src/"
+      [
+        "commonjs",
+        {
+          "esm": true
+        }
+      ],
+      [
+        "module",
+        {
+          "esm": true
+        }
+      ],
+      [
+        "typescript",
+        {
+          "esm": true
+        }
+      ]
     ]
-  }
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ]
 }

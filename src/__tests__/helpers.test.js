@@ -21,17 +21,14 @@ beforeEach(function() {
       },
       'headers': {
         'map': {
-          'cache-control': 'public, max-age=7776000',
+          'cache-control': 'public, max-age=31536000',
           'connection': 'keep-alive',
           'content-length': '271',
           'content-type': 'image/png',
-          'date': 'Wed, 22 Apr 2020 12:57:32 GMT',
-          'expires': 'Tue, 21 Jul 2020 12:57:32 +0000',
-          'last-modified': 'Wed, 22 Apr 2020 12:57:32 GMT',
-          'server': 'nginx',
-          'x-powered-by': 'EasyEngine 3.7.4',
-          'x-srcache-fetch-status': 'MISS',
-          'x-srcache-store-status': 'STORE',
+          'date': 'Thu, 15 Aug 2024 18:10:00 GMT',
+          'last-modified': 'Tue, 13 Aug 2024 21:08:11 GMT',
+          'server': 'cloudflare',
+          'x-powered-by': 'WordOps',
         },
       },
       'ok': true,
@@ -74,6 +71,7 @@ describe('test sumChars function', () => {
 
 describe('test fetchImage funciton on a valid image', () => {
   it('calls the image url and return data', async () => {
+    jest.useFakeTimers();
     fetchImage('https://dummyimage.com/100x100/000/fff').then((res) => {
       expect(res).toBe(true);
     });
@@ -94,6 +92,7 @@ describe('test generateBackgroundStyle function', () => {
 
 describe('test getContainerStyle function', () => {
   it('should return the same sum', () => {
+    jest.useFakeTimers();
     expect(getContainerStyle(32, 'https://dummyimage.com/100x100/000/fff', 64)).toMatchSnapshot();
   });
 });

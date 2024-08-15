@@ -8,6 +8,7 @@ import {
   ImageAvatar,
   CustomAvatar,
 } from './components/'; ;
+
 import {
   fetchImage,
   getContainerStyle,
@@ -17,13 +18,21 @@ import {
 
 const UserAvatar = (props) => {
   let {
-    name,
+    name = 'John Doe',
     src,
+    size = 32,
     bgColor,
-    bgColors,
-    textColor,
-    textStyle,
-    size,
+    bgColors = [ // from https://flatuicolors.com/
+      '#2ecc71', // emerald
+      '#3498db', // peter river
+      '#8e44ad', // wisteria
+      '#e67e22', // carrot
+      '#e74c3c', // alizarin
+      '#1abc9c', // turquoise
+      '#2c3e50', // midnight blue
+    ],
+    textColor = '#fff',
+    textStyle = {},
     imageStyle,
     style,
     borderRadius,
@@ -37,14 +46,16 @@ const UserAvatar = (props) => {
     size = parseInt(size);
   }
 
-  const [inner, setInner] = useState(
-      <TextAvatar
-        textColor={textColor}
-        size={size}
-        name={name}
-        noUpperCase={noUpperCase}
-        textStyle={textStyle}
-      />);
+  const innerDefault = (
+    <TextAvatar
+      textColor={textColor}
+      size={size}
+      name={name}
+      noUpperCase={noUpperCase}
+      textStyle={textStyle}
+    />)
+
+  const [inner, setInner] = useState(innerDefault);
 
   useEffect(() => {
     if (component) {
@@ -88,22 +99,6 @@ UserAvatar.propTypes = {
   borderRadius: PropTypes.number,
   component: PropTypes.any,
   noUpperCase: PropTypes.bool,
-};
-
-UserAvatar.defaultProps = {
-  size: 32,
-  textColor: '#fff',
-  name: 'John Doe',
-  bgColors: [ // from https://flatuicolors.com/
-    '#2ecc71', // emerald
-    '#3498db', // peter river
-    '#8e44ad', // wisteria
-    '#e67e22', // carrot
-    '#e74c3c', // alizarin
-    '#1abc9c', // turquoise
-    '#2c3e50', // midnight blue
-  ],
-  textStyle: {},
 };
 
 export {generateBackgroundColor};

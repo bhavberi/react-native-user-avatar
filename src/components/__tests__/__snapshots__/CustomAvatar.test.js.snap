@@ -3,7 +3,7 @@
 exports[`should render <CustomAvatar /> with local image reference 1`] = `
 <View
   style={
-    Object {
+    {
       "alignItems": "center",
       "flexDirection": "column",
       "height": 50,
@@ -15,12 +15,12 @@ exports[`should render <CustomAvatar /> with local image reference 1`] = `
 >
   <Image
     source={
-      Object {
+      {
         "testUri": "../../../src/components/__tests__/images/rn_logo.png",
       }
     }
     style={
-      Object {
+      {
         "height": 50,
         "width": 50,
       }

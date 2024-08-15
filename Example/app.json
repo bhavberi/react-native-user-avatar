@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "ExpoExample",
-    "slug": "ExpoExample",
+    "name": "React Native User Avatar Example",
+    "slug": "React Native User Avatar Example",
     "platforms": [
       "ios",
       "android",
       "web"
     ],
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
