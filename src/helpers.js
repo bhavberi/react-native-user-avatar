@@ -28,19 +28,27 @@ export const sumChars = (str) => {
   return sum;
 };
 
-export const fetchImage = async (src, options) => {
+export const fetchImage = async (
+  src,
+  options,
+  ignoreImageTypeCheck = false
+) => {
   try {
     const fetchCall = await fetch(src, options);
-    
+
     if (!fetchCall.ok) {
       return false;
     }
 
+    if (ignoreImageTypeCheck) {
+      return true;
+    }
+    
     const contentTypeHeader =
       Platform.OS === "web"
         ? fetchCall.headers.get("content-type")
         : fetchCall.headers["map"]?.["content-type"];
-        
+
     if (contentTypeHeader && contentTypeHeader.startsWith("image/")) {
       return true;
     } else {

@@ -38,6 +38,7 @@ const UserAvatar = (props) => {
     borderRadius,
     component,
     noUpperCase,
+    ignoreImageTypeCheck = false,
   } = props;
 
   // Validations
@@ -62,7 +63,7 @@ const UserAvatar = (props) => {
       setInner(<CustomAvatar size={size} component={component} />);
     } else if (src) {
       const controller = new (AbortController || window.AbortController)();
-      fetchImage(src, {signal: controller.signal}).then((isImage) => {
+      fetchImage(src, {signal: controller.signal}, ignoreImageTypeCheck).then((isImage) => {
         if (isImage) {
           setInner(
               <ImageAvatar src={src} size={size} imageStyle={imageStyle} />,
@@ -99,6 +100,7 @@ UserAvatar.propTypes = {
   borderRadius: PropTypes.number,
   component: PropTypes.any,
   noUpperCase: PropTypes.bool,
+  ignoreImageTypeCheck: PropTypes.bool,
 };
 
 export {generateBackgroundColor};
