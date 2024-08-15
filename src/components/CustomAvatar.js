@@ -1,27 +1,20 @@
-import React from 'react';
-import {View} from 'react-native';
-import PropTypes from 'prop-types';
+import React from "react";
+import { View } from "react-native";
+import PropTypes from "prop-types";
 
 const CustomAvatar = (props) => {
-  const {
-    size,
-    component,
-  } = props;
+  const { size, component } = props;
 
   const containerStyle = {
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
     marginTop: -(size / 20),
     height: size,
     width: size,
   };
 
-  return (
-    <View style={containerStyle}>
-      {component}
-    </View>
-  );
+  return <View style={containerStyle}>{component}</View>;
 };
 
 CustomAvatar.propTypes = {

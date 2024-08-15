@@ -1,37 +1,34 @@
-import React, {useState, useEffect} from 'react';
-import PropTypes from 'prop-types';
-import {View} from 'react-native';
-import 'abortcontroller-polyfill/dist/abortcontroller-polyfill-only';
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { View } from "react-native";
+import "abortcontroller-polyfill/dist/abortcontroller-polyfill-only";
 
-import {
-  TextAvatar,
-  ImageAvatar,
-  CustomAvatar,
-} from './components/'; ;
+import { TextAvatar, ImageAvatar, CustomAvatar } from "./components/";
 
 import {
   fetchImage,
   getContainerStyle,
   generateBackgroundStyle,
   generateBackgroundColor,
-} from './helpers';
+} from "./helpers";
 
 const UserAvatar = (props) => {
   let {
-    name = 'John Doe',
+    name = "John Doe",
     src,
     size = 32,
     bgColor,
-    bgColors = [ // from https://flatuicolors.com/
-      '#2ecc71', // emerald
-      '#3498db', // peter river
-      '#8e44ad', // wisteria
-      '#e67e22', // carrot
-      '#e74c3c', // alizarin
-      '#1abc9c', // turquoise
-      '#2c3e50', // midnight blue
+    bgColors = [
+      // from https://flatuicolors.com/
+      "#2ecc71", // emerald
+      "#3498db", // peter river
+      "#8e44ad", // wisteria
+      "#e67e22", // carrot
+      "#e74c3c", // alizarin
+      "#1abc9c", // turquoise
+      "#2c3e50", // midnight blue
     ],
-    textColor = '#fff',
+    textColor = "#fff",
     textStyle = {},
     imageStyle,
     style,
@@ -42,8 +39,8 @@ const UserAvatar = (props) => {
   } = props;
 
   // Validations
-  if (typeof (size) === 'string') {
-    console.warn('size prop should be a number');
+  if (typeof size === "string") {
+    console.warn("size prop should be a number");
     size = parseInt(size);
   }
 
@@ -54,7 +51,8 @@ const UserAvatar = (props) => {
       name={name}
       noUpperCase={noUpperCase}
       textStyle={textStyle}
-    />)
+    />
+  );
 
   const [inner, setInner] = useState(innerDefault);
 
@@ -63,13 +61,15 @@ const UserAvatar = (props) => {
       setInner(<CustomAvatar size={size} component={component} />);
     } else if (src) {
       const controller = new (AbortController || window.AbortController)();
-      fetchImage(src, {signal: controller.signal}, ignoreImageTypeCheck).then((isImage) => {
-        if (isImage) {
-          setInner(
-              <ImageAvatar src={src} size={size} imageStyle={imageStyle} />,
-          );
+      fetchImage(src, { signal: controller.signal }, ignoreImageTypeCheck).then(
+        (isImage) => {
+          if (isImage) {
+            setInner(
+              <ImageAvatar src={src} size={size} imageStyle={imageStyle} />
+            );
+          }
         }
-      });
+      );
       return () => controller.abort();
     } else {
       setInner(<TextAvatar textColor={textColor} size={size} name={name} />);
@@ -77,10 +77,12 @@ const UserAvatar = (props) => {
   }, [textColor, size, name, component, imageStyle, src]);
 
   return (
-    <View style={[
-      generateBackgroundStyle(name, bgColor, bgColors),
-      getContainerStyle(size, src, borderRadius),
-      style]}
+    <View
+      style={[
+        generateBackgroundStyle(name, bgColor, bgColors),
+        getContainerStyle(size, src, borderRadius),
+        style,
+      ]}
     >
       {inner}
     </View>
@@ -103,6 +105,6 @@ UserAvatar.propTypes = {
   ignoreImageTypeCheck: PropTypes.bool,
 };
 
-export {generateBackgroundColor};
+export { generateBackgroundColor };
 
 export default UserAvatar;

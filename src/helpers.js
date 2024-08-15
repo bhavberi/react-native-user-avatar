@@ -43,7 +43,7 @@ export const fetchImage = async (
     if (ignoreImageTypeCheck) {
       return true;
     }
-    
+
     const contentTypeHeader =
       Platform.OS === "web"
         ? fetchCall.headers.get("content-type")
