@@ -18,7 +18,7 @@ Based on the great library for React: https://github.com/wbinnssmith/react-user-
 
 ## Installation
 
-`npm install --save react-native-user-avatar` or `yarn add react-native-user-avatar`
+`npm install --save @bhavberi/react-native-user-avatar` or `yarn add @bhavberi/react-native-user-avatar`
 
 ## Usage
 
@@ -29,7 +29,7 @@ color for the same user's name every time.
 ### UserAvatar Component
 
 ```jsx
-import UserAvatar from 'react-native-user-avatar';
+import UserAvatar from '@bhavberi/react-native-user-avatar';
 
 const App: () => React$Node = () => {
   return (

@@ -37,12 +37,11 @@
   "dependencies": {
     "abortcontroller-polyfill": "^1.7.5",
     "initials": "^3.1.2",
-    "prop-types": "^15.8.1",
-    "react-native-builder-bob": "^0.29.1"
+    "prop-types": "^15.8.1"
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "react-native": "^0.74.1"
+    "react-native": ">=0.72.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -53,7 +52,6 @@
     "@commitlint/config-conventional": "^19.2.2",
     "@jest/create-cache-key-function": "^29.7.0",
     "@react-native-community/eslint-config": "^3.2.0",
-    "@release-it/conventional-changelog": "^8.0.1",
     "@types/jest": "^29.5.12",
     "@types/react": "^18.3.3",
     "@types/react-native": "^0.73.0",
@@ -71,11 +69,8 @@
     "jest-fetch-mock": "^3.0.3",
     "metro-react-native-babel-preset": "^0.77.0",
     "prettier": "^3.3.3",
-    "react": "^18.2.0",
-    "react-native": "^0.74.1",
     "react-native-builder-bob": "^0.29.1",
     "react-test-renderer": "18.3.1",
-    "release-it": "^17.6.0",
     "ts-jest": "^29.2.4",
     "typescript": "^5.5.4"
   },
@@ -115,23 +110,6 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "yarn lint && yarn typescript && yarn test"
-    }
-  },
-  "release-it": {
-    "git": {
-      "commitMessage": "chore: release %s",
-      "tagName": "v%s"
-    },
-    "npm": {
-      "publish": true
-    },
-    "github": {
-      "release": true
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "preset": "angular"
-      }
     }
   },
   "source": "./src/index.js",
@@ -174,5 +152,8 @@
   "eslintIgnore": [
     "node_modules/",
     "lib/"
-  ]
+  ],
+  "engines": {
+    "node": ">=18"
+  }
 }

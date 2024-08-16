@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
 
-import UserAvatar from 'react-native-user-avatar';
+import UserAvatar from '@bhavberi/react-native-user-avatar';
 
 export default function App() {
   return (
