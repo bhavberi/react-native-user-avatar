@@ -72,7 +72,7 @@ const UserAvatar = (props) => {
       );
       return () => controller.abort();
     } else {
-      setInner(<TextAvatar textColor={textColor} size={size} name={name} />);
+      setInner(<TextAvatar textColor={textColor} size={size} name={name} textStyle={textStyle} />);
     }
   }, [textColor, size, name, component, imageStyle, src]);
 
