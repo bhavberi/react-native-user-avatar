@@ -1,0 +1,37 @@
+name: Coverage Badges
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  formatting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Packages
+        run: |
+          yarn bootstrap
+          yarn add react@18.3.1 react-native@0.75.1 
+          npm install -g jest-coverage-badges
+
+      - name: Run Tests
+        run: yarn test
+
+      - name: Apply Auto Linting fixes
+        run: jest-coverage-badges --output './badges'
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update coverage badges
+          file_pattern: 'badges/*'
+
+
