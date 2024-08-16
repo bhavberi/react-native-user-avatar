@@ -11,5 +11,7 @@ export type UserAvatarPropsType = {
   style?: StyleProp<ViewStyle>
   textStyle?: StyleProp<TextStyle>
   borderRadius: number
+  noUpperCase: boolean
+  ignoreImageTypeCheck: boolean
   component: Object
 }
