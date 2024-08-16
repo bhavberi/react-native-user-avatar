@@ -49,7 +49,7 @@ const App: () => React$Node = () => {
 
 | Attribute              | Type            | Default Value | Description                                                                       |
 | ---------------------- | --------------- | ------------- | --------------------------------------------------------------------------------- |
-| `name`                 | string          | `'John Doe'`  | name used for generating initials                                                 |
+| `name`                 | string          | `'Bhav Beri'` | name used for generating initials                                                 |
 | `src`                  | string          | `undefined`   | source image on the internet to display                                           |
 | `bgColor`              | string          | `undefined`   | custom background color for the initials                                          |
 | `bgColors`             | array           | see index.js  | custom array of background colors to choose from                                  |

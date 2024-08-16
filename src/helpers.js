@@ -30,7 +30,7 @@ export const sumChars = (str) => {
 
 export const fetchImage = async (
   src,
-  options,
+  options = {},
   ignoreImageTypeCheck = false
 ) => {
   try {
@@ -74,15 +74,8 @@ export const generateBackgroundStyle = (name, bgColor, bgColors) => {
 };
 
 export const generateBackgroundColor = (name, bgColor, bgColors) => {
-  let background;
-  if (bgColor) {
-    background = bgColor;
-  } else {
-    // Pick a deterministic color from the list
-    const i = sumChars(name) % bgColors.length;
-    background = bgColors[i];
-  }
-  return background;
+  let background = generateBackgroundStyle(name, bgColor, bgColors);
+  return background.backgroundColor;
 };
 
 export const getContainerStyle = (size, src, borderRadius) => {

@@ -14,7 +14,7 @@ import {
 
 const UserAvatar = (props) => {
   let {
-    name = "John Doe",
+    name = "Bhav Beri",
     src,
     size = 32,
     bgColor,
@@ -72,7 +72,14 @@ const UserAvatar = (props) => {
       );
       return () => controller.abort();
     } else {
-      setInner(<TextAvatar textColor={textColor} size={size} name={name} textStyle={textStyle} />);
+      setInner(
+        <TextAvatar
+          textColor={textColor}
+          size={size}
+          name={name}
+          textStyle={textStyle}
+        />
+      );
     }
   }, [textColor, size, name, component, imageStyle, src]);
 

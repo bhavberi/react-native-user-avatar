@@ -1,10 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test abbr function normally should return my initials 1`] = `"AB"`;
+exports[`test abbr function normally should return my initials 1`] = `"BB"`;
 
 exports[`test abbr function when name is invalid should return my initials 1`] = `"!@"`;
 
-exports[`test abbr function when name starts with + should return my initials 1`] = `"+A"`;
+exports[`test abbr function when name starts with + should return my initials 1`] = `"+B"`;
+
+exports[`test generateBackgroundColor function should return the same sum 1`] = `"#1abc9c"`;
+
+exports[`test generateBackgroundColor function should return the same sum 2`] = `"#2ecc71"`;
 
 exports[`test generateBackgroundStyle function should return the same sum 1`] = `
 {
@@ -28,4 +32,4 @@ exports[`test getContainerStyle function should return the same sum 1`] = `
 }
 `;
 
-exports[`test sumChars function should return the same sum 1`] = `1034`;
+exports[`test sumChars function should return the same sum 1`] = `803`;
