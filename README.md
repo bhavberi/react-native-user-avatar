@@ -1,8 +1,8 @@
 # React Native User Avatar
 
-[![npm version](https://img.shields.io/npm/v/react-native-user-avatar.svg?style=flat-square)](https://www.npmjs.com/package/react-native-user-avatar)
-[![npm downloads](https://img.shields.io/npm/dm/react-native-user-avatar.svg?style=flat-square)](https://www.npmjs.com/package/react-native-user-avatar)
-[![Build Status](https://travis-ci.org/avishayil/react-native-user-avatar.svg?branch=master)](https://travis-ci.org/avishayil/react-native-user-avatar)
+[![npm version](https://img.shields.io/npm/v/@bhavberi/react-native-user-avatar.svg?style=flat-square)](https://www.npmjs.com/package/@bhavberi/react-native-user-avatar)
+[![npm downloads](https://img.shields.io/npm/dm/@bhavberi/react-native-user-avatar.svg?style=flat-square)](https://www.npmjs.com/package/@bhavberi/react-native-user-avatar)
+[![Build Status](https://travis-ci.org/bhavberi/react-native-user-avatar.svg?branch=master)](https://travis-ci.org/bhavberi/react-native-user-avatar)
 
 <!-- ![Coverage lines](./badges/badge-lines.svg)
 ![Coverage functions](./badges/badge-functions.svg)
