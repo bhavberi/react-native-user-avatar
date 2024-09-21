@@ -1,13 +1,13 @@
-import {Platform} from 'react-native';
-import initials from 'initials';
+import { Platform } from "react-native";
+import initials from "initials";
 
 export const abbr = (name, noUpperCase) => {
   let abbr = initials(name, noUpperCase);
-  if (name.startsWith('+')) {
+  if (name.startsWith("+")) {
     abbr = `+${abbr}`;
   }
   if (!abbr) {
-    console.warn('Could not get abbr from name');
+    console.warn("Could not get abbr from name");
     abbr = name;
   }
   if (abbr.length > 2) {
@@ -29,9 +29,9 @@ export const sumChars = (str) => {
 };
 
 export const fetchImage = async (
-    src,
-    options = {},
-    ignoreImageTypeCheck = false,
+  src,
+  options = {},
+  ignoreImageTypeCheck = false,
 ) => {
   try {
     const fetchCall = await fetch(src, options);
@@ -45,20 +45,20 @@ export const fetchImage = async (
     }
 
     const contentTypeHeader =
-      Platform.OS === 'web' ?
-        fetchCall.headers.get('content-type') :
-        fetchCall.headers['map'] ?
-          fetchCall.headers['map']['content-type'] :
+      Platform.OS === "web" ?
+        fetchCall.headers.get("content-type") :
+        fetchCall.headers["map"] ?
+          fetchCall.headers["map"]["content-type"] :
           null;
 
-    if (contentTypeHeader && contentTypeHeader.startsWith('image/')) {
+    if (contentTypeHeader && contentTypeHeader.startsWith("image/")) {
       return true;
     } else {
-      console.warn('Online fetched source is not a supported image');
+      console.warn("Online fetched source is not a supported image");
       return false;
     }
   } catch (err) {
-    console.warn('Error fetching source, falling back to initials', err);
+    console.warn("Error fetching source, falling back to initials", err);
     return false;
   }
 };
@@ -72,7 +72,7 @@ export const generateBackgroundStyle = (name, bgColor, bgColors) => {
     const i = sumChars(name) % bgColors.length;
     background = bgColors[i];
   }
-  return {backgroundColor: background};
+  return { backgroundColor: background };
 };
 
 export const generateBackgroundColor = (name, bgColor, bgColors) => {
@@ -84,8 +84,8 @@ export const getContainerStyle = (size, src, borderRadius) => {
   return {
     borderRadius: borderRadius ? borderRadius : size * 0.5,
     borderWidth: src ? 0 : 1,
-    borderColor: 'transparent',
-    justifyContent: 'center',
-    alignItems: 'center',
+    borderColor: "transparent",
+    justifyContent: "center",
+    alignItems: "center",
   };
 };

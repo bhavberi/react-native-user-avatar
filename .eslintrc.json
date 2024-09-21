@@ -8,8 +8,8 @@
         "google"
     ],
     "ignorePatterns": [
-        "lib/",
-        "Example/"
+        "lib/"
+        // "Example/"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -33,6 +33,22 @@
                     "FunctionDeclaration": false
                 }
             }
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "comma-dangle": [
+            "error",
+            "always-multiline"
+        ],
+        "indent": [
+            "error",
+            2
+        ],
+        "object-curly-spacing": [
+            "error",
+            "always"
         ]
     },
     "settings": {
