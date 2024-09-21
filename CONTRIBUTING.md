@@ -46,8 +46,8 @@ When you're sending a pull request:
 
 The example app uses [Expo](https://expo.io/) for the React Native example. You will need to install the Expo app for [Android](https://play.google.com/store/apps/details?id=host.exp.exponent) and [iOS](https://itunes.apple.com/app/apple-store/id982107779) to start developing.
 
-After you're done, you can run
-- `npm run example` to start the example app.
+After you're done, you can run the example app by following these steps:
+- `yarn example`
 - Scan the QR code to launch it on your device.
 
 ## Reporting issues

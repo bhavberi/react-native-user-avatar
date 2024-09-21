@@ -20,7 +20,7 @@ export default function App() {
         </View>
         <View style={styles.sectionContainer}>
           <Text style={{ fontSize: 30 }}>Avatar Initials</Text>
-          <UserAvatar name="Bhav Beri" size={100} />
+          <UserAvatar name="Bhav Beri" size={100} textColor={"yellow"}/>
           <Text style={{ fontSize: 30 }}>Avatar Image</Text>
           <UserAvatar
             name="Bhav Beri"
