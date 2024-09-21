@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Image } from "react-native";
+import React from 'react';
+import PropTypes from 'prop-types';
+import {Image} from 'react-native';
 
 const ImageAvatar = (props) => {
-  const { src, size, imageStyle, borderRadius } = props;
+  const {src, size, imageStyle, borderRadius} = props;
 
   const imageDefaultStyle = {
     borderRadius: borderRadius ? borderRadius : size * 0.5,
@@ -13,7 +13,7 @@ const ImageAvatar = (props) => {
 
   const newProps = {
     style: [imageDefaultStyle, imageStyle],
-    source: { uri: src },
+    source: {uri: src},
   };
 
   return React.createElement(Image, newProps);

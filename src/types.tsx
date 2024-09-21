@@ -1,6 +1,7 @@
 import { ImageStyle, StyleProp, ViewStyle, TextStyle } from 'react-native'
+import { ReactNode } from 'react'
 
-export type UserAvatarPropsType = {
+export interface UserAvatarPropsType {
   name: string
   src: string
   bgColor: string
@@ -13,5 +14,5 @@ export type UserAvatarPropsType = {
   borderRadius: number
   noUpperCase: boolean
   ignoreImageTypeCheck: boolean
-  component: Object
+  component: ReactNode
 }

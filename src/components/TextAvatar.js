@@ -1,15 +1,15 @@
-import React from "react";
-import { View, Text } from "react-native";
-import PropTypes from "prop-types";
-import { abbr } from "../helpers";
+import React from 'react';
+import {View, Text} from 'react-native';
+import PropTypes from 'prop-types';
+import {abbr} from '../helpers';
 
 const TextAvatar = (props) => {
-  const { name, size, textColor, noUpperCase, textStyle, style = {} } = props;
+  const {name, size, textColor, noUpperCase, textStyle, style = {}} = props;
 
   const textContainerStyle = {
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
     marginTop: -(size / 20),
     height: size,
     width: size,
