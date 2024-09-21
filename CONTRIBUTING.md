@@ -1,8 +1,8 @@
 # Contributing to React Native User Avatar
 
 ## Development Process
-
-I am an individual wokring on this project, all the work is public and presented on GitHub.
+This is a fork of the project at https://github.com/avishayil/react-native-user-avatar.\
+I am an individual working on this project, all the work is public and presented on GitHub.
 
 ### Development workflow
 
