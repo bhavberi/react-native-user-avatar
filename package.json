@@ -27,13 +27,13 @@
   "scripts": {
     "test": "jest --coverage",
     "typescript": "tsc --noEmit",
-    "lint": "eslint --ext=.js .",
-    "lint-fix": "eslint --ext=.js . --fix",
+    "lint": "eslint --ext=.js,.ts .",
+    "lint-fix": "eslint --ext=.js,.ts . --fix",
     "prepare": "bob build",
     "release": "release-it",
-    "example": "yarn --cwd Example",
+    "example": "rm -rf node_modules && yarn --cwd Example && npm run --prefix Example start",
     "bootstrap": "yarn && yarn prepare",
-    "clean": "rm -rf node_modules coverage .env lib Example/node_modules "
+    "clean": "rm -rf node_modules coverage .env lib Example/node_modules Example/.expo"
   },
   "dependencies": {
     "abortcontroller-polyfill": "^1.7.5",
