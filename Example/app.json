@@ -1,12 +1,8 @@
 {
   "expo": {
     "name": "React Native User Avatar Example",
-    "slug": "React Native User Avatar Example",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "slug": "react-native-user-avatar-example",
+    "platforms": ["ios", "android", "web"],
     "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,11 +14,10 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "newArchEnabled": true
   }
 }
